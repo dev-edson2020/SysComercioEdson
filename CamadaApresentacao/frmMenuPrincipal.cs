@@ -43,5 +43,17 @@ namespace CamadaApresentacao
             frmCategoria categ = new frmCategoria();
             categ.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmFuncionario func = new frmFuncionario();
+            func.Show();
+        }
+
+        private void btnFornecedores_Click(object sender, EventArgs e)
+        {
+            frmFornecedor fornec = new frmFornecedor();
+            fornec.Show();
+        }
     }
 }

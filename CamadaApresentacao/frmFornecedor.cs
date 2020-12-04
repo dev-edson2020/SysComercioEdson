@@ -337,5 +337,10 @@ namespace CamadaApresentacao
         {
             this.txtBuscar.Text = string.Empty;
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

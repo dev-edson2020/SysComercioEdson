@@ -19,7 +19,7 @@ namespace CamadaApresentacao
 
         public static frmProduto GetInstancia()
         {
-            if(_Instancia == null)
+            if (_Instancia == null)
             {
                 _Instancia = new frmProduto();
             }
@@ -169,7 +169,7 @@ namespace CamadaApresentacao
         {
             OpenFileDialog dialog = new OpenFileDialog();
             DialogResult result = dialog.ShowDialog();
-            if(result == DialogResult.OK)
+            if (result == DialogResult.OK)
             {
                 this.pxImagem.SizeMode = PictureBoxSizeMode.StretchImage;
                 this.pxImagem.Image = Image.FromFile(dialog.FileName);
@@ -202,7 +202,7 @@ namespace CamadaApresentacao
             this.Limpar();
             this.Habilitar(true);
             this.txtNome.Focus();
-            
+
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -305,7 +305,7 @@ namespace CamadaApresentacao
             this.txtNome.Text = Convert.ToString(this.dataLista.CurrentRow.Cells["nome"].Value);
             this.txtDescricao.Text = Convert.ToString(this.dataLista.CurrentRow.Cells["descricao"].Value);
 
-            
+
             byte[] imagenBuffer = (byte[])this.dataLista.CurrentRow.Cells["imagem"].Value;
             System.IO.MemoryStream ms = new System.IO.MemoryStream(imagenBuffer);
             this.pxImagem.Image = Image.FromStream(ms);
@@ -314,7 +314,7 @@ namespace CamadaApresentacao
             this.txtIdCategoria.Text = Convert.ToString(this.dataLista.CurrentRow.Cells["idcategoria"].Value);
             this.txtCategoria.Text = Convert.ToString(this.dataLista.CurrentRow.Cells["Categoria"].Value);
             this.cbApresentacao.SelectedValue = Convert.ToString(this.dataLista.CurrentRow.Cells["idapresentacao"].Value);
-           
+
 
             this.tabControl1.SelectedIndex = 1;
         }
@@ -380,6 +380,198 @@ namespace CamadaApresentacao
         private void cbApresentacao_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtBuscar_TextChanged_1(object sender, EventArgs e)
+        {
+            this.BuscarNome();
+        }
+
+        private void btnBuscar_Click_1(object sender, EventArgs e)
+        {
+            this.BuscarNome();
+        }
+
+        private void btnDeletar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult Opcao;
+                Opcao = MessageBox.Show("Realmente Deseja apagar os Registros", "Sistema Comércio", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (Opcao == DialogResult.OK)
+                {
+                    string Codigo;
+                    string Resp = "";
+
+                    foreach (DataGridViewRow row in dataLista.Rows)
+                    {
+                        if (Convert.ToBoolean(row.Cells[0].Value))
+                        {
+                            Codigo = Convert.ToString(row.Cells[1].Value);
+                            Resp = NProduto.Excluir(Convert.ToInt32(Codigo));
+
+                            if (Resp.Equals("OK"))
+                            {
+                                this.MensagemOk("Registro excluido com sucesso");
+
+                            }
+                            else
+                            {
+                                this.MensagemErro(Resp);
+                            }
+                        }
+                    }
+                    this.Mostrar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void dataLista_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            this.txtId.Text = Convert.ToString(this.dataLista.CurrentRow.Cells["idproduto"].Value);
+            this.txtCodigo.Text = Convert.ToString(this.dataLista.CurrentRow.Cells["codigo"].Value);
+            this.txtNome.Text = Convert.ToString(this.dataLista.CurrentRow.Cells["nome"].Value);
+            this.txtDescricao.Text = Convert.ToString(this.dataLista.CurrentRow.Cells["descricao"].Value);
+
+
+            byte[] imagenBuffer = (byte[])this.dataLista.CurrentRow.Cells["imagem"].Value;
+            System.IO.MemoryStream ms = new System.IO.MemoryStream(imagenBuffer);
+            this.pxImagem.Image = Image.FromStream(ms);
+            this.pxImagem.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            this.txtIdCategoria.Text = Convert.ToString(this.dataLista.CurrentRow.Cells["idcategoria"].Value);
+            this.txtCategoria.Text = Convert.ToString(this.dataLista.CurrentRow.Cells["Categoria"].Value);
+            this.cbApresentacao.SelectedValue = Convert.ToString(this.dataLista.CurrentRow.Cells["idapresentacao"].Value);
+
+
+            this.tabControl1.SelectedIndex = 1;
+        }
+
+
+        private void btnNovo_Click_1(object sender, EventArgs e)
+        {
+            this.eNovo = true;
+            this.eEditar = false;
+            this.botoes();
+            this.Limpar();
+            this.Habilitar(true);
+            this.txtNome.Focus();
+        }
+
+        private void btnEditar_Click_1(object sender, EventArgs e)
+        {
+            if (this.txtId.Text.Equals(""))
+            {
+                this.MensagemErro("Selecione um registro para editar");
+            }
+            else
+            {
+                this.eEditar = true;
+                this.botoes();
+                this.Habilitar(true);
+            }
+        }
+
+            
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            this.eNovo = false;
+            this.eEditar = false;
+            this.botoes();
+            this.Habilitar(false);
+            this.Limpar();
+        }
+
+        private void btnSalvar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string resp = "";
+                if (this.txtNome.Text == string.Empty || this.txtIdCategoria.Text == string.Empty || this.txtCodigo.Text == string.Empty)
+                {
+                    MensagemErro("Preencha todos os campos");
+                    errorIcone.SetError(txtNome, "Insira o nome");
+                    errorIcone.SetError(txtIdCategoria, "Insira o nome");
+                    errorIcone.SetError(txtCodigo, "Insira o nome");
+
+                }
+                else
+                {
+                    System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                    this.pxImagem.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                    byte[] imagem = ms.GetBuffer();
+
+                    if (this.eNovo)
+                    {
+                        resp = NProduto.Inserir(this.txtCodigo.Text, this.txtNome.Text.Trim().ToUpper(), this.txtDescricao.Text.Trim(), imagem, Convert.ToInt32(this.txtIdCategoria.Text), Convert.ToInt32(this.cbApresentacao.SelectedValue));
+                    }
+                    else
+                    {
+                        resp = NProduto.Editar(Convert.ToInt32(this.txtId.Text), this.txtCodigo.Text, this.txtNome.Text.Trim().ToUpper(), this.txtDescricao.Text.Trim(), imagem, Convert.ToInt32(this.txtIdCategoria.Text), Convert.ToInt32(this.cbApresentacao.SelectedValue));
+                    }
+
+                    if (resp.Equals("OK"))
+                    {
+                        if (this.eNovo)
+                        {
+                            this.MensagemOk("Registro salvo com sucesso");
+                        }
+                        else
+                        {
+                            this.MensagemOk("Registro editado com sucesso");
+                        }
+                    }
+                    else
+                    {
+                        this.MensagemErro(resp);
+                    }
+
+                    this.eNovo = false;
+                    this.eEditar = false;
+                    this.botoes();
+                    this.Limpar();
+                    this.Mostrar();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void btnBuscarCategoria_Click_1(object sender, EventArgs e)
+        {
+            frmBuscarCategoria form = new frmBuscarCategoria();
+            form.ShowDialog();
+        }
+
+        private void btnCarregar_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            DialogResult result = dialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                this.pxImagem.SizeMode = PictureBoxSizeMode.StretchImage;
+                this.pxImagem.Image = Image.FromFile(dialog.FileName);
+
+            }
+        }
+
+        private void btnLimpar_Click_1(object sender, EventArgs e)
+        {
+            this.pxImagem.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.pxImagem.Image = global::CamadaApresentacao.Properties.Resources.semImagem;
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
