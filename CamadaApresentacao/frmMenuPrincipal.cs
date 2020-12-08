@@ -24,7 +24,7 @@ namespace CamadaApresentacao
 
         private void btnProdutos_Click(object sender, EventArgs e)
         {
-            frmProduto prod = new frmProduto();
+            frmProduto prod = new frmProduto();            
             prod.Show();
         }
 

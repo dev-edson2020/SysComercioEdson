@@ -87,5 +87,10 @@ namespace CamadaApresentacao
             form.setFornecedor(par1, par2);
             this.Hide();
         }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

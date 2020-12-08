@@ -461,5 +461,10 @@ namespace CamadaApresentacao
             this.MostrarDetalheEntrada();
             this.tabControl1.SelectedIndex = 1;
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
