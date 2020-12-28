@@ -42,20 +42,8 @@ namespace CamadaApresentacao
                 frm.Sobrenome = Dados.Rows[0][2].ToString();
                 frm.Acesso = Dados.Rows[0][3].ToString();
                 frm.Show();
-                this.Hide();
-
-                
+                this.Hide();                
             }
-        }
-
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUsuario_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
@@ -66,6 +54,6 @@ namespace CamadaApresentacao
         private void btnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
+        }      
     }
 }

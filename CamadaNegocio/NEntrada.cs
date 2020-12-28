@@ -54,15 +54,12 @@ namespace CamadaNegocio
             return Obj.Anular(Obj);
         }
 
-
         //Método Mostrar
         public static DataTable Mostrar()
         {
             return new DEntrada().Mostrar();
-
-
+            
         }
-
 
         //Método Buscar por Data
         public static DataTable BuscarData(string textobuscar, string textobuscar2)
@@ -71,13 +68,11 @@ namespace CamadaNegocio
              return Obj.BuscarData(textobuscar, textobuscar2);
         }
 
-
         //Método Mostrar
         public static DataTable MostrarDetalhes(string textobuscar)
         {
             DEntrada Obj = new DEntrada();
             return Obj.MostrarDetalhes(textobuscar);
         }
-
     }
 }

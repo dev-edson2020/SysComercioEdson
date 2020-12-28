@@ -47,17 +47,30 @@ namespace CamadaApresentacao
             lblTotal.Text = "Total de Registros: " + Convert.ToString(dataLista.Rows.Count);
 
         }
-        private void frmBuscarCategoria_Load(object sender, EventArgs e)
-        {
-            this.Mostrar();
-        }
+        
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             this.BuscarNome();
         }
 
-        private void dataLista_DoubleClick(object sender, EventArgs e)
+        
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            this.BuscarNome();
+        }
+
+        private void frmBuscarCategoria_Load(object sender, EventArgs e)
+        {
+            this.Mostrar();
+        }
+
+        private void dataLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             frmProduto form = frmProduto.GetInstancia();
             string par1, par2;
@@ -66,17 +79,5 @@ namespace CamadaApresentacao
             form.setCategoria(par1, par2);
             this.Hide();
         }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            this.BuscarNome();
-        }
-
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-       
     }
 }

@@ -110,7 +110,7 @@
             this.btnNovo.TabIndex = 8;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = false;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click_1);
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnEditar
             // 
@@ -125,7 +125,7 @@
             this.btnEditar.TabIndex = 7;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click_1);
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnSalvar
             // 
@@ -140,7 +140,7 @@
             this.btnSalvar.TabIndex = 6;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click_1);
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // txtDescricao
             // 
@@ -185,7 +185,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(891, 425);
+            this.tabPage2.Size = new System.Drawing.Size(891, 426);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "CONFIGURAÇÕES";
             // 
@@ -253,7 +253,7 @@
             this.btnBuscar.Size = new System.Drawing.Size(32, 29);
             this.btnBuscar.TabIndex = 19;
             this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click_1);
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // chkDeletar
             // 
@@ -281,7 +281,8 @@
             this.dataLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataLista.Size = new System.Drawing.Size(904, 394);
             this.dataLista.TabIndex = 6;
-            this.dataLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataLista_CellContentClick_1);
+            this.dataLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataLista_CellDoubleClick);
+            this.dataLista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataLista_CellDoubleClick);
             // 
             // tabPage1
             // 

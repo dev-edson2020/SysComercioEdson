@@ -78,7 +78,7 @@
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSair.Location = new System.Drawing.Point(178, 128);
+            this.btnSair.Location = new System.Drawing.Point(182, 128);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 25);
             this.btnSair.TabIndex = 10;
@@ -93,7 +93,7 @@
             this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEntrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEntrar.Location = new System.Drawing.Point(97, 128);
+            this.btnEntrar.Location = new System.Drawing.Point(101, 128);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(75, 25);
             this.btnEntrar.TabIndex = 9;
@@ -117,7 +117,6 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(207, 26);
             this.txtUsuario.TabIndex = 7;
-            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // label3
             // 
@@ -142,9 +141,9 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::CamadaApresentacao.Properties.Resources.login;
-            this.pictureBox3.Location = new System.Drawing.Point(307, 10);
+            this.pictureBox3.Location = new System.Drawing.Point(284, 47);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(81, 54);
+            this.pictureBox3.Size = new System.Drawing.Size(100, 72);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
@@ -192,12 +191,12 @@
             // lblHora
             // 
             this.lblHora.AutoSize = true;
-            this.lblHora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
-            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHora.ForeColor = System.Drawing.Color.White;
-            this.lblHora.Location = new System.Drawing.Point(410, 45);
+            this.lblHora.BackColor = System.Drawing.Color.White;
+            this.lblHora.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblHora.Location = new System.Drawing.Point(333, 36);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(51, 16);
+            this.lblHora.Size = new System.Drawing.Size(72, 30);
             this.lblHora.TabIndex = 11;
             this.lblHora.Text = "label4";
             // 
@@ -251,7 +250,6 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

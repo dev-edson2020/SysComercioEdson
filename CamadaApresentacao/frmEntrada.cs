@@ -199,17 +199,9 @@ namespace CamadaApresentacao
             this.txtProduto.Text = nome;
         }
 
-        private void bnBuscarProduto_Click(object sender, EventArgs e)
-        {
-            frmVerProdutoEntrada frm = new frmVerProdutoEntrada();
-            frm.Show();
-        }
+       
 
-        private void btnBuscarFornecedor_Click(object sender, EventArgs e)
-        {
-            frmVerFornecedorEntrada frm = new frmVerFornecedorEntrada();
-            frm.Show();
-        }
+       
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -287,17 +279,7 @@ namespace CamadaApresentacao
 
         }
 
-        private void btnNovo_Click(object sender, EventArgs e)
-        {
-            this.eNovo = true;
-            this.botoes();
-            this.Limpar();
-            this.Habilitar(true);
-            this.txtSerie.Focus();
-            this.LimparDetalhes();
-            this.totalPago = 0;  
-            
-        }
+       
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -309,60 +291,7 @@ namespace CamadaApresentacao
             this.LimparDetalhes();
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string resp = "";
-                if (this.txtIdFornecedor.Text == string.Empty || this.txtImposto.Text == string.Empty || this.txtSerie.Text == string.Empty)
-                {
-                    MensagemErro("Preencha todos os campos");
-                    errorIcone.SetError(txtImposto, "Insira o Imposto");
-                    errorIcone.SetError(txtIdFornecedor, "Insira o Fornecedor");
-                    errorIcone.SetError(txtSerie, "Insira a série");
-
-                }
-                else
-                {
-                    
-
-                    if (this.eNovo)
-                    {
-                        resp = NEntrada.Inserir(idfuncionario, Convert.ToInt32(this.txtIdFornecedor.Text),
-                            dtData.Value, cbComprovante.Text,
-                            txtSerie.Text, txtCorrelativo.Text, 
-                            Convert.ToDecimal(txtImposto.Text), "EMITIDO", 
-                            dtDetalhe);
-                    }
-                   
-
-                    if (resp.Equals("OK"))
-                    {
-                        if (this.eNovo)
-                        {
-                            this.MensagemOk("Registro salvo com sucesso");
-                        }
-                       
-                    }
-                    else
-                    {
-                        this.MensagemErro(resp);
-                    }
-
-                    this.eNovo = false;
-                    
-                    this.botoes();
-                    this.Limpar();
-                    this.Mostrar();
-                    this.LimparDetalhes();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
-        }
+      
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -462,9 +391,98 @@ namespace CamadaApresentacao
             this.tabControl1.SelectedIndex = 1;
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void btnNovo_Click_1(object sender, EventArgs e)
         {
+            this.eNovo = true;
+            this.botoes();
+            this.Limpar();
+            this.Habilitar(true);
+            this.txtSerie.Focus();
+            this.LimparDetalhes();
+            this.totalPago = 0;
 
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            this.eNovo = false;
+
+            this.botoes();
+            this.Habilitar(false);
+            this.Limpar();
+            this.LimparDetalhes();
+        }
+
+        private void btnSalvar_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string resp = "";
+                if (this.txtIdFornecedor.Text == string.Empty || this.txtImposto.Text == string.Empty || this.txtSerie.Text == string.Empty)
+                {
+                    MensagemErro("Preencha todos os campos");
+                    errorIcone.SetError(txtImposto, "Insira o Imposto");
+                    errorIcone.SetError(txtIdFornecedor, "Insira o Fornecedor");
+                    errorIcone.SetError(txtSerie, "Insira a série");
+
+                }
+                else
+                {
+
+
+                    if (this.eNovo)
+                    {
+                        resp = NEntrada.Inserir(idfuncionario, Convert.ToInt32(this.txtIdFornecedor.Text),
+                            dtData.Value, cbComprovante.Text,
+                            txtSerie.Text, txtCorrelativo.Text,
+                            Convert.ToDecimal(txtImposto.Text), "EMITIDO",
+                            dtDetalhe);
+                    }
+
+
+                    if (resp.Equals("OK"))
+                    {
+                        if (this.eNovo)
+                        {
+                            this.MensagemOk("Registro salvo com sucesso");
+                        }
+
+                    }
+                    else
+                    {
+                        this.MensagemErro(resp);
+                    }
+
+                    this.eNovo = false;
+
+                    this.botoes();
+                    this.Limpar();
+                    this.Mostrar();
+                    this.LimparDetalhes();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnBuscarFornecedor_Click(object sender, EventArgs e)
+        {
+            frmVerFornecedorEntrada frm = new frmVerFornecedorEntrada();
+            frm.Show();
+        }
+
+        private void btnBuscarProduto_Click(object sender, EventArgs e)
+        {
+            frmVerProdutoEntrada frm = new frmVerProdutoEntrada();
+            frm.Show();
         }
     }
 }

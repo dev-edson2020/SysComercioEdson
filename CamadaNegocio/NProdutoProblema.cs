@@ -8,13 +8,13 @@ using CamadaDados;
 
 namespace CamadaNegocio
 {
-   public class NProduto
+   public class NProdutoProblema
     {
 
         //Método Inserir
         public static string Inserir(string codigo, string nome, string descricao, byte[] imagem, int idcategoria, int idapresentacao )
         {
-            DProduto Obj = new CamadaDados.DProduto();
+            DProdutoProblema Obj = new CamadaDados.DProdutoProblema();
             Obj.Codigo = codigo;
             Obj.Nome = nome;
             Obj.Descricao = descricao;
@@ -29,7 +29,7 @@ namespace CamadaNegocio
         //Método Editar
         public static string Editar(int id, string codigo, string nome, string descricao, byte[] imagem, int idcategoria, int idapresentacao)
         {
-            DProduto Obj = new CamadaDados.DProduto();
+            DProdutoProblema Obj = new CamadaDados.DProdutoProblema();
             Obj.Id = id;
             Obj.Codigo = codigo;
             Obj.Nome = nome;
@@ -46,7 +46,7 @@ namespace CamadaNegocio
         //Método Deletar
         public static string Excluir(int id)
         {
-            DProduto Obj = new CamadaDados.DProduto();
+            DProdutoProblema Obj = new CamadaDados.DProdutoProblema();
             Obj.Id = id;
 
             return Obj.Excluir(Obj);
@@ -56,7 +56,7 @@ namespace CamadaNegocio
         //Método Mostrar
         public static DataTable Mostrar()
         {
-            return new DProduto().Mostrar();
+            return new DProdutoProblema().Mostrar();
 
 
         }
@@ -65,7 +65,7 @@ namespace CamadaNegocio
         //Método Buscar Nome
         public static DataTable BuscarNome(string textobuscar)
         {
-            DProduto Obj = new DProduto();
+            DProdutoProblema Obj = new DProdutoProblema();
             Obj.TextoBuscar = textobuscar;
             return Obj.BuscarNome(Obj);
         }

@@ -46,7 +46,7 @@
     <Compile Include="NEntrada.cs" />
     <Compile Include="NFornecedor.cs" />
     <Compile Include="NFuncionario.cs" />
-    <Compile Include="NProduto.cs" />
+    <Compile Include="NProdutoProblema.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

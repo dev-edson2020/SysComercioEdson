@@ -117,34 +117,15 @@ namespace CamadaApresentacao
             this.botoes();
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            this.BuscarNome();
-        }
-
+       
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             this.BuscarNome();
         }
 
-        private void btnNovo_Click(object sender, EventArgs e)
-        {
-            this.eNovo = true;
-            this.eEditar = false;
-            this.botoes();
-            this.Limpar();
-            this.Habilitar(true);
-            this.txtNome.Focus();
-            this.txtIdCategoria.Enabled = false;
-
-        }
-
+      
         private void dataLista_DoubleClick(object sender, EventArgs e)
         {
-            this.txtIdCategoria.Text = Convert.ToString(this.dataLista.CurrentRow.Cells["idcategoria"].Value);
-            this.txtNome.Text = Convert.ToString(this.dataLista.CurrentRow.Cells["nome"].Value);
-            this.txtDescricao.Text = Convert.ToString(this.dataLista.CurrentRow.Cells["descricao"].Value);
-            this.tabControl1.SelectedIndex = 1;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -157,27 +138,42 @@ namespace CamadaApresentacao
 
         }
 
-        private void dataLista_CellContentClick(object sender, DataGridViewCellEventArgs e)
+                  
+            
+        private void btnFechar_Click(object sender, EventArgs e)
         {
-            if (e.ColumnIndex == dataLista.Columns["Deletar"].Index)
+            this.Close();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            this.BuscarNome();
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            this.eNovo = false;
+            this.eEditar = false;
+            this.botoes();
+            this.Habilitar(false);
+            this.Limpar();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (this.txtIdCategoria.Text.Equals(""))
             {
-                DataGridViewCheckBoxCell ChkDeletar = (DataGridViewCheckBoxCell)dataLista.Rows[e.RowIndex].Cells["Deletar"];
-                ChkDeletar.Value = !Convert.ToBoolean(ChkDeletar.Value);
+                this.MensagemErro("Selecione um registro para inserir");
+            }
+            else
+            {
+                this.eEditar = true;
+                this.botoes();
+                this.Habilitar(true);
             }
         }
 
-        private void btnNovo_Click_1(object sender, EventArgs e)
-        {
-            this.eNovo = true;
-            this.eEditar = false;
-            this.botoes();
-            this.Limpar();
-            this.Habilitar(true);
-            this.txtNome.Focus();
-            this.txtIdCategoria.Enabled = false;
-        }
-
-        private void btnSalvar_Click_1(object sender, EventArgs e)
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -231,44 +227,24 @@ namespace CamadaApresentacao
             }
         }
 
-        private void btnEditar_Click_1(object sender, EventArgs e)
+        private void btnNovo_Click(object sender, EventArgs e)
         {
-            if (this.txtIdCategoria.Text.Equals(""))
-            {
-                this.MensagemErro("Selecione um registro para inserir");
-            }
-            else
-            {
-                this.eEditar = true;
-                this.botoes();
-                this.Habilitar(true);
-            }
-        }
-
-        private void btnCancelar_Click_1(object sender, EventArgs e)
-        {
-            this.eNovo = false;
+            this.eNovo = true;
             this.eEditar = false;
             this.botoes();
-            this.Habilitar(false);
             this.Limpar();
+            this.Habilitar(true);
+            this.txtNome.Focus();
+            this.txtIdCategoria.Enabled = false;
         }
 
-        private void btnBuscar_Click_1(object sender, EventArgs e)
+        private void dataLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.BuscarNome();
-        }
 
-      
-
-        private void dataLista_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            this.txtIdCategoria.Text = Convert.ToString(this.dataLista.CurrentRow.Cells["idcategoria"].Value);
+            this.txtNome.Text = Convert.ToString(this.dataLista.CurrentRow.Cells["nome"].Value);
+            this.txtDescricao.Text = Convert.ToString(this.dataLista.CurrentRow.Cells["descricao"].Value);
+            this.tabControl1.SelectedIndex = 1;
         }
     }
 }

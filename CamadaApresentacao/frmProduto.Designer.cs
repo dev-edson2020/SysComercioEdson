@@ -34,10 +34,10 @@
             this.errorIcone = new System.Windows.Forms.ErrorProvider(this.components);
             this.cbApresentacao = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBuscarCategoria = new System.Windows.Forms.Button();
             this.txtCategoria = new System.Windows.Forms.TextBox();
             this.txtIdCategoria = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -66,8 +66,8 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnFechar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnFechar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorIcone)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pxImagem)).BeginInit();
@@ -103,46 +103,18 @@
             this.label8.TabIndex = 19;
             this.label8.Text = "Apresentação";
             // 
-            // btnBuscarCategoria
-            // 
-            this.btnBuscarCategoria.BackColor = System.Drawing.Color.White;
-            this.btnBuscarCategoria.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscarCategoria.BackgroundImage")));
-            this.btnBuscarCategoria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnBuscarCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBuscarCategoria.Location = new System.Drawing.Point(811, 68);
-            this.btnBuscarCategoria.Name = "btnBuscarCategoria";
-            this.btnBuscarCategoria.Size = new System.Drawing.Size(28, 29);
-            this.btnBuscarCategoria.TabIndex = 18;
-            this.btnBuscarCategoria.UseVisualStyleBackColor = false;
-            this.btnBuscarCategoria.Click += new System.EventHandler(this.btnBuscarCategoria_Click_1);
-            // 
-            // txtCategoria
-            // 
-            this.txtCategoria.Location = new System.Drawing.Point(607, 68);
-            this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(207, 29);
-            this.txtCategoria.TabIndex = 17;
-            // 
-            // txtIdCategoria
-            // 
-            this.txtIdCategoria.Location = new System.Drawing.Point(567, 68);
-            this.txtIdCategoria.Name = "txtIdCategoria";
-            this.txtIdCategoria.Size = new System.Drawing.Size(34, 29);
-            this.txtIdCategoria.TabIndex = 16;
-            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(70)))), ((int)(((byte)(90)))));
+            this.groupBox1.Controls.Add(this.btnBuscarCategoria);
+            this.groupBox1.Controls.Add(this.txtCategoria);
+            this.groupBox1.Controls.Add(this.txtIdCategoria);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.btnNovo);
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.btnSalvar);
             this.groupBox1.Controls.Add(this.cbApresentacao);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.btnBuscarCategoria);
-            this.groupBox1.Controls.Add(this.txtCategoria);
-            this.groupBox1.Controls.Add(this.txtIdCategoria);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.btnLimpar);
             this.groupBox1.Controls.Add(this.btnCarregar);
@@ -164,6 +136,34 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PRODUTOS";
             // 
+            // btnBuscarCategoria
+            // 
+            this.btnBuscarCategoria.BackColor = System.Drawing.Color.White;
+            this.btnBuscarCategoria.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscarCategoria.BackgroundImage")));
+            this.btnBuscarCategoria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuscarCategoria.Location = new System.Drawing.Point(807, 73);
+            this.btnBuscarCategoria.Name = "btnBuscarCategoria";
+            this.btnBuscarCategoria.Size = new System.Drawing.Size(32, 29);
+            this.btnBuscarCategoria.TabIndex = 29;
+            this.btnBuscarCategoria.UseVisualStyleBackColor = false;
+            this.btnBuscarCategoria.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtCategoria
+            // 
+            this.txtCategoria.Location = new System.Drawing.Point(604, 74);
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(197, 29);
+            this.txtCategoria.TabIndex = 27;
+            // 
+            // txtIdCategoria
+            // 
+            this.txtIdCategoria.Location = new System.Drawing.Point(564, 74);
+            this.txtIdCategoria.Name = "txtIdCategoria";
+            this.txtIdCategoria.Size = new System.Drawing.Size(34, 29);
+            this.txtIdCategoria.TabIndex = 26;
+            // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Blue;
@@ -177,7 +177,7 @@
             this.btnCancelar.TabIndex = 24;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnNovo
             // 
@@ -192,7 +192,7 @@
             this.btnNovo.TabIndex = 23;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = false;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click_1);
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnEditar
             // 
@@ -207,7 +207,7 @@
             this.btnEditar.TabIndex = 22;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click_1);
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnSalvar
             // 
@@ -222,7 +222,7 @@
             this.btnSalvar.TabIndex = 21;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = false;
-            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click_1);
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // label7
             // 
@@ -243,7 +243,7 @@
             this.btnLimpar.Size = new System.Drawing.Size(55, 55);
             this.btnLimpar.TabIndex = 14;
             this.btnLimpar.UseVisualStyleBackColor = true;
-            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click_1);
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnCarregar
             // 
@@ -255,7 +255,7 @@
             this.btnCarregar.Size = new System.Drawing.Size(55, 55);
             this.btnCarregar.TabIndex = 13;
             this.btnCarregar.UseVisualStyleBackColor = true;
-            this.btnCarregar.Click += new System.EventHandler(this.btnCarregar_Click_1);
+            this.btnCarregar.Click += new System.EventHandler(this.btnCarregar_Click);
             // 
             // pxImagem
             // 
@@ -344,7 +344,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(864, 451);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "CONFIGURAÇÕES";
+            this.tabPage2.Text = "Cadastrar";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabControl1
@@ -369,13 +369,13 @@
             this.tabPage1.Controls.Add(this.lblTotal);
             this.tabPage1.Controls.Add(this.txtBuscar);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.ForeColor = System.Drawing.Color.White;
+            this.tabPage1.ForeColor = System.Drawing.Color.Black;
             this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(864, 451);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "LISTAR";
+            this.tabPage1.Text = "Listar";
             // 
             // btnImprimir
             // 
@@ -384,6 +384,7 @@
             this.btnImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImprimir.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.ForeColor = System.Drawing.Color.White;
             this.btnImprimir.Location = new System.Drawing.Point(755, 14);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(103, 31);
@@ -398,13 +399,14 @@
             this.btnDeletar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.btnDeletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeletar.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeletar.ForeColor = System.Drawing.Color.White;
             this.btnDeletar.Location = new System.Drawing.Point(646, 14);
             this.btnDeletar.Name = "btnDeletar";
             this.btnDeletar.Size = new System.Drawing.Size(103, 31);
             this.btnDeletar.TabIndex = 22;
             this.btnDeletar.Text = "Deletar";
             this.btnDeletar.UseVisualStyleBackColor = false;
-            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click_1);
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
             // btnBuscar
             // 
@@ -418,23 +420,28 @@
             this.btnBuscar.Size = new System.Drawing.Size(32, 29);
             this.btnBuscar.TabIndex = 20;
             this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click_1);
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // chkDeletar
             // 
             this.chkDeletar.AutoSize = true;
+            this.chkDeletar.ForeColor = System.Drawing.Color.White;
             this.chkDeletar.Location = new System.Drawing.Point(9, 51);
             this.chkDeletar.Name = "chkDeletar";
             this.chkDeletar.Size = new System.Drawing.Size(85, 25);
             this.chkDeletar.TabIndex = 7;
             this.chkDeletar.Text = "Deletar";
             this.chkDeletar.UseVisualStyleBackColor = true;
+            this.chkDeletar.CheckedChanged += new System.EventHandler(this.chkDeletar_CheckedChanged);
             // 
             // dataLista
             // 
             this.dataLista.AllowUserToAddRows = false;
             this.dataLista.AllowUserToDeleteRows = false;
             this.dataLista.AllowUserToOrderColumns = true;
+            this.dataLista.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Deletar});
@@ -445,7 +452,8 @@
             this.dataLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataLista.Size = new System.Drawing.Size(872, 389);
             this.dataLista.TabIndex = 6;
-            this.dataLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataLista_CellContentClick_1);
+            this.dataLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataLista_CellContentClick);
+            this.dataLista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataLista_CellDoubleClick);
             // 
             // Deletar
             // 
@@ -456,6 +464,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
+            this.lblTotal.ForeColor = System.Drawing.Color.White;
             this.lblTotal.Location = new System.Drawing.Point(542, 51);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(57, 21);
@@ -473,11 +482,23 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(11, 17);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "Pesquisar";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(8, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 21);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "PRODUTOS";
             // 
             // btnFechar
             // 
@@ -492,17 +513,6 @@
             this.btnFechar.TabStop = false;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(8, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 21);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "PRODUTOS";
-            // 
             // frmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -513,8 +523,10 @@
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(200, 100);
+            this.MaximizeBox = false;
             this.Name = "frmProduto";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmProduto";
             this.Load += new System.EventHandler(this.frmProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorIcone)).EndInit();
@@ -548,9 +560,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cbApresentacao;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnBuscarCategoria;
-        private System.Windows.Forms.TextBox txtCategoria;
-        private System.Windows.Forms.TextBox txtIdCategoria;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnCarregar;
@@ -572,5 +581,8 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtCategoria;
+        private System.Windows.Forms.TextBox txtIdCategoria;
+        private System.Windows.Forms.Button btnBuscarCategoria;
     }
 }

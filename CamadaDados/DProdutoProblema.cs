@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace CamadaDados
 {
-   public class DProduto
+   public class DProdutoProblema
     {
         private int _Id;
         private string _Codigo;
@@ -123,12 +123,12 @@ namespace CamadaDados
             }
         }
 
-        public DProduto()
+        public DProdutoProblema()
         {
 
         }
 
-        public DProduto(int id, string codigo, string nome, string descricao, byte[] imagem, int idcategoria, int idapresentacao, string textobuscar)
+        public DProdutoProblema(int id, string codigo, string nome, string descricao, byte[] imagem, int idcategoria, int idapresentacao, string textobuscar)
         {
             this.Id = id;
             this.Codigo = codigo;
@@ -142,7 +142,7 @@ namespace CamadaDados
         }
 
         //Método Inserir
-        public string Inserir(DProduto Produto)
+        public string Inserir(DProdutoProblema Produto)
         {
             string resp = "";
             SqlConnection SqlCon = new SqlConnection();
@@ -227,7 +227,7 @@ namespace CamadaDados
 
 
         //Método Editar
-        public string Editar(DProduto Produto)
+        public string Editar(DProdutoProblema Produto)
         {
             string resp = "";
             SqlConnection SqlCon = new SqlConnection();
@@ -312,7 +312,7 @@ namespace CamadaDados
 
 
         //Método Excluir
-        public string Excluir(DProduto Produto)
+        public string Excluir(DProdutoProblema Produto)
         {
             string resp = "";
             SqlConnection SqlCon = new SqlConnection();
@@ -380,7 +380,7 @@ namespace CamadaDados
 
 
         //Método Buscar Nome
-        public DataTable BuscarNome(DProduto Produto)
+        public DataTable BuscarNome(DProdutoProblema Produto)
         {
             DataTable DtResultado = new DataTable("produto");
             SqlConnection SqlCon = new SqlConnection();

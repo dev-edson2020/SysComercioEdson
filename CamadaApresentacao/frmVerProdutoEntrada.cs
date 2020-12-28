@@ -33,7 +33,7 @@ namespace CamadaApresentacao
         //Mostrar no Data Grid
         private void Mostrar()
         {
-            this.dataLista.DataSource = NProduto.Mostrar();
+            this.dataLista.DataSource = NProdutoProblema.Mostrar();
             this.ocultarColunas();
             lblTotal.Text = "Total de Registros: " + Convert.ToString(dataLista.Rows.Count);
         }
@@ -43,7 +43,7 @@ namespace CamadaApresentacao
         //Buscar pelo Nome
         private void BuscarNome()
         {
-            this.dataLista.DataSource = NProduto.BuscarNome(this.txtBuscar.Text);
+            this.dataLista.DataSource = NProdutoProblema.BuscarNome(this.txtBuscar.Text);
 
             this.ocultarColunas();
             lblTotal.Text = "Total de Registros: " + Convert.ToString(dataLista.Rows.Count);
